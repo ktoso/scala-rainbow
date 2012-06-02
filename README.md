@@ -35,3 +35,14 @@ import Rainbow._
 
 println { "Warning, critical error!".red }
 ```
+
+You can us it as a mixin `with Rainbow` or `import Rainbow._` or import the **package object** `import pl.project13.scala.rainbow._`.
+
+Example
+-------
+
+<img src="https://raw.github.com/ktoso/scala-rainbow/master/doc/demo.png" alt="Scala Rainbow Demo"/>
+
+License
+-------
+Whatever ;-) Just use it however you see fit.
