@@ -21,7 +21,7 @@ for maven:
 ```xml
 <dependency>
   <groupId>pl.project13.scala</groupId>
-  <artifactId>rainbow</rainbow>
+  <artifactId>rainbow_2.9.1</rainbow>
   <version>0.1</version>
 </dependency>
 ```
