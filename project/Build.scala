@@ -31,6 +31,7 @@ object BuildSettings {
       organization := "pl.project13.scala",
       name         := "rainbow",
       version      := "0.1",
+      scalaVersion := "2.10.0-M3",
       crossScalaVersions := Seq("2.9.1", "2.9.2", "2.10.0-M3"),
       libraryDependencies ++= dependencies
     )

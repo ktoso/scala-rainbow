@@ -46,6 +46,12 @@ println { "Warning, critical error!".red }
 You can us it as a mixin `with Rainbow` or `import Rainbow._` or import the **package object** `import pl.project13.scala.rainbow._`.
 For a list of available colors take a look at <a href="https://github.com/ktoso/scala-rainbow/blob/master/src/main/scala/pl/project13/scala/rainbow/Rainbow.scala">Rainbow.scala</a>.
 
+Yay, feedback!
+-------------
+
+> btw I really like your lib!<br/>
+> It reminds me of "node-colors" for node.js
+
 License
 -------
 Whatever ;-) Just use it however you see fit.
