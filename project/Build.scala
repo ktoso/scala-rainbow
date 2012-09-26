@@ -16,7 +16,8 @@ object Dependencies {
   import Resolvers._
   import Versions._
 
-  val scalaTest               = "org.scalatest"           %% "scalatest"                 % Versions.scalatest % "test"
+  val scalaTest               = "org.scalatest"              % ("scalatest_" + "2.10.0-M3") % "1.8-SNAPSHOT" % "test" from "https://oss.sonatype.org/content/groups/public/org/scalatest/scalatest_2.10.0-M3/1.8-SNAPSHOT/scalatest_2.10.0-M3-1.8-SNAPSHOT.jar"
+
 }
 
 object BuildSettings {
@@ -30,7 +31,7 @@ object BuildSettings {
       organization := "pl.project13.scala",
       name         := "rainbow",
       version      := "0.1",
-      scalaVersion := "2.9.1",
+      crossScalaVersions := Seq("2.9.1", "2.9.2", "2.10.0-M3"),
       libraryDependencies ++= dependencies
     )
 
