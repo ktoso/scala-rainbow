@@ -1,7 +1,8 @@
 scala-rainbow
 =============
 
-Super simple terminal output colorizing for Scala
+Super simple terminal output colorizing for Scala.
+Using it you can colorize any string for terminal output and was tested on Linux and OSX, not on windows and there it probably sux ;-)
 
 Example
 -------
