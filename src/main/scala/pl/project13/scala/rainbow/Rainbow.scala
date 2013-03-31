@@ -95,45 +95,45 @@ trait IfColors extends Colors {
 
   def s: String
 
-  @inline def blackIf(matches: String)   = blackIf(matches.r)
-  @inline def blackIf(matches: Regex)    = onMatch(matches) { black }
+  @inline def blackIf(matches: String): String   = blackIf(matches.r)
+  @inline def blackIf(matches: Regex): String    = onMatch(matches) { black }
 
-  @inline def redIf(matches: String)     = redIf(matches.r)
-  @inline def redIf(matches: Regex)      = onMatch(matches) { red }
+  @inline def redIf(matches: String): String     = redIf(matches.r)
+  @inline def redIf(matches: Regex): String      = onMatch(matches) { red }
 
-  @inline def greenIf(matches: String)   = onMatch(matches.r) { green }
-  @inline def greenIf(matches: Regex)    = onMatch(matches) { green }
+  @inline def greenIf(matches: String): String   = onMatch(matches.r) { green }
+  @inline def greenIf(matches: Regex): String    = onMatch(matches) { green }
 
-  @inline def yellowIf(matches: String)  = onMatch(matches.r) { yellow }
-  @inline def yellowIf(matches: Regex)   = onMatch(matches) { yellow }
+  @inline def yellowIf(matches: String): String  = onMatch(matches.r) { yellow }
+  @inline def yellowIf(matches: Regex): String   = onMatch(matches) { yellow }
 
-  @inline def blueIf(matches: String)    = onMatch(matches.r) { blue }
-  @inline def blueIf(matches: Regex)     = onMatch(matches) { blue }
+  @inline def blueIf(matches: String): String    = onMatch(matches.r) { blue }
+  @inline def blueIf(matches: Regex): String     = onMatch(matches) { blue }
 
-  @inline def magentaIf(matches: String) = onMatch(matches.r) { magenta }
-  @inline def magentaIf(matches: Regex)  = onMatch(matches) { magenta }
+  @inline def magentaIf(matches: String): String = onMatch(matches.r) { magenta }
+  @inline def magentaIf(matches: Regex): String  = onMatch(matches) { magenta }
 
-  @inline def cyanIf(matches: String)    = onMatch(matches.r) { cyan }
-  @inline def cyanIf(matches: Regex)     = onMatch(matches) { cyan }
+  @inline def cyanIf(matches: String): String    = onMatch(matches.r) { cyan }
+  @inline def cyanIf(matches: Regex): String     = onMatch(matches) { cyan }
 
-  @inline def whiteIf(matches: String)   = onMatch(matches.r) { white }
-  @inline def whiteIf(matches: Regex)    = onMatch(matches) { white }
+  @inline def whiteIf(matches: String): String   = onMatch(matches.r) { white }
+  @inline def whiteIf(matches: Regex): String    = onMatch(matches) { white }
 
 
-  @inline def boldIf(matches: String)       = onMatch(matches.r) { bold }
-  @inline def boldIf(matches: Regex)        = onMatch(matches) { bold }
+  @inline def boldIf(matches: String): String       = onMatch(matches.r) { bold }
+  @inline def boldIf(matches: Regex): String        = onMatch(matches) { bold }
 
-  @inline def underlinedIf(matches: String) = onMatch(matches.r) { underlined }
-  @inline def underlinedIf(matches: Regex)  = onMatch(matches) { underlined }
+  @inline def underlinedIf(matches: String): String = onMatch(matches.r) { underlined }
+  @inline def underlinedIf(matches: Regex): String  = onMatch(matches) { underlined }
 
-  @inline def blinkIf(matches: String)      = onMatch(matches.r) { blink }
-  @inline def blinkIf(matches: Regex)       = onMatch(matches) { blink }
+  @inline def blinkIf(matches: String): String      = onMatch(matches.r) { blink }
+  @inline def blinkIf(matches: Regex): String       = onMatch(matches) { blink }
 
-  @inline def reversedIf(matches: String)   = onMatch(matches.r) { reversed }
-  @inline def reversedIf(matches: Regex)    = onMatch(matches) { reversed }
+  @inline def reversedIf(matches: String): String   = onMatch(matches.r) { reversed }
+  @inline def reversedIf(matches: Regex): String    = onMatch(matches) { reversed }
 
-  @inline def invisibleIf(matches: String)  = onMatch(matches.r) { invisible }
-  @inline def invisibleIf(matches: Regex)   = onMatch(matches) { invisible }
+  @inline def invisibleIf(matches: String): String  = onMatch(matches.r) { invisible }
+  @inline def invisibleIf(matches: Regex): String   = onMatch(matches) { invisible }
 
   private def onMatch(regex: Regex)(colorized: => String): String =
     if (regex.pattern.matcher(s).matches) colorized else s
