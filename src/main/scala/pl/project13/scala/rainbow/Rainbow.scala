@@ -28,69 +28,112 @@ trait Colors {
   def s: String
 
   /** Colorize the given string foreground to ANSI black */
-  def black = BLACK + s + RESET
+  @inline def black = BLACK + s + RESET
+
   /** Colorize the given string foreground to ANSI red */
-  def red = RED + s + RESET
+  @inline def red = RED + s + RESET
+
   /** Colorize the given string foreground to ANSI red */
-  def green = GREEN + s + RESET
+  @inline def green = GREEN + s + RESET
+
   /** Colorize the given string foreground to ANSI red */
-  def yellow = YELLOW + s + RESET
+  @inline def yellow = YELLOW + s + RESET
+
   /** Colorize the given string foreground to ANSI red */
-  def blue = BLUE + s + RESET
+  @inline def blue = BLUE + s + RESET
+
   /** Colorize the given string foreground to ANSI red */
-  def magenta = MAGENTA + s + RESET
+  @inline def magenta = MAGENTA + s + RESET
+
   /** Colorize the given string foreground to ANSI red */
-  def cyan = CYAN + s + RESET
+  @inline def cyan = CYAN + s + RESET
+
   /** Colorize the given string foreground to ANSI red */
-  def white = WHITE + s + RESET
+  @inline def white = WHITE + s + RESET
 
   /** Colorize the given string background to ANSI red */
-  def onBlack = BLACK_B + s + RESET
+  @inline def onBlack = BLACK_B + s + RESET
+
   /** Colorize the given string background to ANSI red */
-  def onRed = RED_B+ s + RESET
+  @inline def onRed = RED_B+ s + RESET
+
   /** Colorize the given string background to ANSI red */
-  def onGreen = GREEN_B+ s + RESET
+  @inline def onGreen = GREEN_B+ s + RESET
+
   /** Colorize the given string background to ANSI red */
-  def onYellow = YELLOW_B + s + RESET
+  @inline def onYellow = YELLOW_B + s + RESET
+
   /** Colorize the given string background to ANSI red */
-  def onBlue = BLUE_B+ s + RESET
+  @inline def onBlue = BLUE_B+ s + RESET
+
   /** Colorize the given string background to ANSI red */
-  def onMagenta = MAGENTA_B + s + RESET
+  @inline def onMagenta = MAGENTA_B + s + RESET
+
   /** Colorize the given string background to ANSI red */
-  def onCyan = CYAN_B+ s + RESET
+  @inline def onCyan = CYAN_B+ s + RESET
+
   /** Colorize the given string background to ANSI red */
-  def onWhite = WHITE_B+ s + RESET
+  @inline def onWhite = WHITE_B+ s + RESET
 
   /** Make the given string bold */
-  def bold = BOLD + s + RESET
+  @inline def bold = BOLD + s + RESET
+
   /** Underline the given string */
-  def underlined = UNDERLINED + s + RESET
+  @inline def underlined = UNDERLINED + s + RESET
+
   /** Make the given string blink (some terminals may turn this off) */
-  def blink = BLINK + s + RESET
+  @inline def blink = BLINK + s + RESET
+
   /** Reverse the ANSI colors of the given string */
-  def reversed = REVERSED + s + RESET
+  @inline def reversed = REVERSED + s + RESET
+
   /** Make the given string invisible using ANSI color codes */
-  def invisible = INVISIBLE + s + RESET
+  @inline def invisible = INVISIBLE + s + RESET
 }
 
 trait IfColors extends Colors {
 
   def s: String
 
-  def blackIf(matches: String)   = onMatch(matches.r) { black }
-  def redIf(matches: String)     = onMatch(matches.r) { red }
-  def greenIf(matches: String)   = onMatch(matches.r) { green }
-  def yellowIf(matches: String)  = onMatch(matches.r) { yellow }
-  def blueIf(matches: String)    = onMatch(matches.r) { blue }
-  def magentaIf(matches: String) = onMatch(matches.r) { magenta }
-  def cyanIf(matches: String)    = onMatch(matches.r) { cyan }
-  def whiteIf(matches: String)   = onMatch(matches.r) { white }
+  @inline def blackIf(matches: String)   = blackIf(matches.r)
+  @inline def blackIf(matches: Regex)    = onMatch(matches) { black }
 
-  def boldIf(matches: String)       = onMatch(matches.r) { bold }
-  def underlinedIf(matches: String) = onMatch(matches.r) { underlined }
-  def blinkIf(matches: String)      = onMatch(matches.r) { blink }
-  def reversedIf(matches: String)   = onMatch(matches.r) { reversed }
-  def invisibleIf(matches: String)  = onMatch(matches.r) { invisible }
+  @inline def redIf(matches: String)     = redIf(matches.r)
+  @inline def redIf(matches: Regex)      = onMatch(matches) { red }
+
+  @inline def greenIf(matches: String)   = onMatch(matches.r) { green }
+  @inline def greenIf(matches: Regex)    = onMatch(matches) { green }
+
+  @inline def yellowIf(matches: String)  = onMatch(matches.r) { yellow }
+  @inline def yellowIf(matches: Regex)   = onMatch(matches) { yellow }
+
+  @inline def blueIf(matches: String)    = onMatch(matches.r) { blue }
+  @inline def blueIf(matches: Regex)     = onMatch(matches) { blue }
+
+  @inline def magentaIf(matches: String) = onMatch(matches.r) { magenta }
+  @inline def magentaIf(matches: Regex)  = onMatch(matches) { magenta }
+
+  @inline def cyanIf(matches: String)    = onMatch(matches.r) { cyan }
+  @inline def cyanIf(matches: Regex)     = onMatch(matches) { cyan }
+
+  @inline def whiteIf(matches: String)   = onMatch(matches.r) { white }
+  @inline def whiteIf(matches: Regex)    = onMatch(matches) { white }
+
+
+  @inline def boldIf(matches: String)       = onMatch(matches.r) { bold }
+  @inline def boldIf(matches: Regex)        = onMatch(matches) { bold }
+
+  @inline def underlinedIf(matches: String) = onMatch(matches.r) { underlined }
+  @inline def underlinedIf(matches: Regex)  = onMatch(matches) { underlined }
+
+  @inline def blinkIf(matches: String)      = onMatch(matches.r) { blink }
+  @inline def blinkIf(matches: Regex)       = onMatch(matches) { blink }
+
+  @inline def reversedIf(matches: String)   = onMatch(matches.r) { reversed }
+  @inline def reversedIf(matches: Regex)    = onMatch(matches) { reversed }
+
+  @inline def invisibleIf(matches: String)  = onMatch(matches.r) { invisible }
+  @inline def invisibleIf(matches: Regex)   = onMatch(matches) { invisible }
 
   private def onMatch(regex: Regex)(colorized: => String): String =
     if (regex.pattern.matcher(s).matches) colorized else s
