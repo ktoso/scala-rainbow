@@ -55,4 +55,4 @@ Yay, feedback!
 
 License
 -------
-Whatever ;-) Just use it however you see fit.
+Public Domain - Just use it however you see fit.
