@@ -1,13 +1,10 @@
 package pl.project13.scala.rainbow
 
-import org.scalatest.FlatSpec
-import org.scalatest.matchers.ShouldMatchers
+import org.scalatest.{Matchers, FlatSpec}
 
-class ImplicitRainbowSpec extends FlatSpec with ShouldMatchers {
+class ImplicitRainbowSpec extends FlatSpec with Matchers {
 
   behavior of "Rainbow"
-
-  import Rainbow._
 
   it should "colorize strings" in {
     val red = "red".red

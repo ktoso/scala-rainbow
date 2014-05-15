@@ -17,7 +17,7 @@ It's published to sonatype and synced with Maven Central, so all you need to do 
 for sbt:
 
 ```scala
-val scalaRainbow = "pl.project13.scala" %% "rainbow" % "0.1"
+val scalaRainbow = "pl.project13.scala" %% "rainbow" % "0.2"
 
 libraryDependencies += scalaRainbow
 ```
@@ -27,12 +27,12 @@ for maven:
 ```xml
 <dependency>
   <groupId>pl.project13.scala</groupId>
-  <artifactId>rainbow_2.9.2</artifactId> <!-- your scala version here -->
-  <version>0.1</version>
+  <artifactId>rainbow_2.10.4</artifactId> <!-- your scala version here -->
+  <version>0.2</version>
 </dependency>
 ```
 
-The library is published for **Scala**: **2.9.1**, **2.9.2** and **2.10.0**
+The library is published for **Scala**: **2.9.1**, **2.9.2** (0.1) and **2.10.4**, **2.11.x** (0.2).
 
 Usage
 ------
