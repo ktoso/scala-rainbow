@@ -16,7 +16,7 @@ object Dependencies {
   import Resolvers._
   import Versions._
 
-  val scalaTest               =  "org.scalatest" % "scalatest_2.11" % "2.1.6"
+  val scalaTest               =  "org.scalatest" % "scalatest_2.11" % "2.1.6" % "test"
 
 }
 
