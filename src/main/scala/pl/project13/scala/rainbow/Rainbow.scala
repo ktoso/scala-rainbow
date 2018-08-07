@@ -65,6 +65,11 @@ trait Rainbow {
     def reversed = REVERSED + s + RESET
     /** Make the given string invisible using ANSI color codes */
     def invisible = INVISIBLE + s + RESET
+    /** ANSI256 */
+    def fg(i: Int) = withForeground(i)
+    def bg(i: Int) = withBackground(i)
+    def withForeground(colorindex: Int) = s"\u001b[38;5;${colorindex.abs % 256}m" + s + RESET
+    def withBackground(colorindex: Int) = s"\u001b[48;5;${colorindex.abs % 256}m" + s + RESET
   }
 }
 
