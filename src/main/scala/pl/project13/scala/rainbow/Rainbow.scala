@@ -65,6 +65,8 @@ trait Rainbow {
     def reversed = REVERSED + s + RESET
     /** Make the given string invisible using ANSI color codes */
     def invisible = INVISIBLE + s + RESET
+    /** Make a custom coloured string */
+    def colour(cl: String) = cl + s + RESET
   }
 }
 
